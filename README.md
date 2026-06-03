@@ -1,15 +1,3 @@
-
-Conversation with Gemini
-
-
-import pandas as pdimport matplotlib.pyplot as pltimport seaborn as sns# Load Datasetdf = pd.read_csv("D:/data analytics/flipkart_cleaned.csv")# Data Cleaningdf['retail_price'] = pd.to_numeric(df['retail_price'], errors='coerce')df['discounted_price'] = pd.to_numeric(df['discounted_price'], errors='coerce')df.dropna(inplace=True)# Create Discount Columndf['discount'] = df['retail_price'] - df['discounted_price']# ==============================# Dashboard 1: Top Categories# ==============================plt.figure(figsize=(10,5))top_category = df['product_category_tree'].value_counts().head(10)sns.barplot(x=top_category.values, y=top_category.index)plt.title("Dashboard 1: Top Product Categories")plt.show()# ==============================# Dashboard 2: Top Brands# ==============================plt.figure(figsize=(10,5))top_brands = df['brand'].value_counts().head(10)sns.barplot(x=top_brands.values, y=top_brands.index)plt.title("Dashboard 2: Top Brands")plt.show()# ==============================# Dashboard 3: Retail Price Distribution# ==============================plt.figure(figsize=(10,5))sns.histplot(df['retail_price'], bins=50)plt.title("Dashboard 3: Retail Price Distribution")plt.show()# ==============================# Dashboard 4: Discount Distribution# ==============================plt.figure(figsize=(10,5))sns.histplot(df['discount'], bins=50, color='green')plt.title("Dashboard 4: Discount Distribution")plt.show()# ==============================# Dashboard 5: Retail vs Discount Price# ==============================plt.figure(figsize=(10,5))sns.scatterplot(x='retail_price', y='discounted_price', data=df)plt.title("Dashboard 5: Retail vs Discount Price")plt.show()
-
-
-
-this is my flipcart data analyst project . make a readme for this project
-
-Here is a clean, professional, and comprehensive README.md file for your Flipkart Data Analytics project. It is structured to look great on GitHub and clearly explains your work to recruiters or collaborators.
-
 Flipkart Data Analytics Project
 This project performs exploratory data analysis (EDA) and data visualization on a cleaned Flipkart dataset. Using Python, Pandas, Seaborn, and Matplotlib, the project uncovers insights regarding top product categories, dominant brands, pricing structures, and discount distributions.
 
